@@ -17,5 +17,5 @@ const client = new Client({
 (async function(){
     const job = await client.createJob();
     job.onStateChanged(newState => console.log(`job: ${newState}`));
+    
 })()
-
