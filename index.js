@@ -18,4 +18,6 @@ const client = new Client({
     const job = await client.createJob();
     job.onStateChanged(newState => console.log(`job: ${newState}`));
     
+    job.onOutput('Premier League Table', table=> console.log('output: Premier League Table', table))
+    
 })()
