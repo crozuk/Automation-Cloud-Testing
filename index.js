@@ -12,11 +12,10 @@ const client = new Client({
     auth: app_secret
 });
 
-// Create the Job. Let's start with no input whatsoever.
+// Create and follow job
 
 (async function(){
     const job = await client.createJob();
+    job.onStateChanged(newState => console.log(`job: ${newState}`));
 })()
 
-// Subscribe to Job state updates to know what's happening.
-job.onStateChanged(newState => console.log(`job: ${newState}`));
