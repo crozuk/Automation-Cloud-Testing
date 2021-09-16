@@ -1,9 +1,9 @@
 // Enviroment Variables
 require('dotenv').config();
 const app_secret = process.env.secret
-
+//Log App Secret Key
 console.log(app_secret)
-
+//Automation Cloud Client
 const { Client } = require('@automationcloud/client');
 
 // Create Client instance
