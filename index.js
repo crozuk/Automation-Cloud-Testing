@@ -15,9 +15,18 @@ const client = new Client({
 // Create and follow job
 
 (async function(){
+    //Creat job
     const job = await client.createJob();
     job.onStateChanged(newState => console.log(`job: ${newState}`));
     
-    job.onOutput('Premier League Table', table=> console.log('output: Premier League Table', table))
+    //Log on output
+  //job.onOutput('Premier League Table', table=> console.log('output: Premier League Table', table))
     
+    //Wait for completion
+    await job.waitForCompletion();
+    
+    //Log on completion
+    const output = await job.getOutput('Premier League Table');
+    console.log('output: Premier League Table', output);
+
 })()
