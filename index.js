@@ -6,6 +6,8 @@ console.log(app_secret)
 //Automation Cloud Client
 const { Client } = require('@automationcloud/client');
 
+const fs = require('fs')
+
 // Create Client instance
 const client = new Client({
     serviceId: '26cc53af-fc37-486c-88ea-c6777b82fa9d',
@@ -28,5 +30,7 @@ const client = new Client({
     //Log on completion
     const output = await job.getOutput('Premier League Table');
     console.log('output: Premier League Table', output);
+
+    fs.writeFileSync('response.json', output);
 
 })()
