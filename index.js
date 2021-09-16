@@ -31,6 +31,6 @@ const client = new Client({
     const output = await job.getOutput('Premier League Table');
     console.log('output: Premier League Table', output);
 
-    fs.writeFileSync('response.json', output);
+    fs.writeFileSync('response.json', JSON.stringify(output));
 
 })()
