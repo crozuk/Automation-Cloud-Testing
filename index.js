@@ -1,6 +1,7 @@
+//File System
 const fs = require('fs')
-var http = require('http');
 
+//Initla data read
 data = fs.readFileSync('response.json', (err, data) => {
     if (err) {
       console.error(err)
@@ -35,9 +36,15 @@ setInterval(function () {
 
 }, 259200000)
 
-//create a server object:
-http.createServer(function (req, res) {
-  res.write(data);
-  res.end();
-}).listen(3001); 
+//Express server
+var express = require('express');
+var app = express();
+const port = 3001
 
+app.get('/', (req, res) => {
+  res.json(JSON.parse(data))
+})
+
+app.listen(port, () => {
+  console.log(`JSON response at http://localhost:${port}`)
+})

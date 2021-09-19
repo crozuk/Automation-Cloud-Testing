@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "dependencies": {
     "@automationcloud/client": "^1.8.3",
-    "dotenv": "^10.0.0"
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1"
   },
   "scripts": {
     "test": "node test.js",
     "start": "node index.js",
-      "fetch": "node fetch.js"
+    "fetch": "node fetch.js"
   }
 }
