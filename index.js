@@ -9,11 +9,8 @@ data = fs.readFileSync('response.json', (err, data) => {
     //console.log(JSON.parse(data));  
   });
 
-//Fetch updated JSON (2 days)
+//Fetch updated JSON (1 day)
 setInterval(function () {
-  
-  //Fetch updated table
-  //require('child_process').fork('fetch.js');
   
   data = fs.readFileSync('response.json', (err, data) => {
     if (err) {
@@ -26,7 +23,7 @@ setInterval(function () {
   //console.log("beep")
   console.log(JSON.parse(data))
 
-}, 172800000)
+}, 86400000)
 
 
 //Fetch updated table (3 days)
