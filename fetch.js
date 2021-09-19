@@ -1,12 +1,12 @@
 // Enviroment Variables
 require('dotenv').config();
-const app_secret = process.env.secret
+const app_secret = process.env.secret;
 //Log App Secret Key
-console.log(app_secret)
+console.log(app_secret);
 //Automation Cloud Client
 const { Client } = require('@automationcloud/client');
 
-const fs = require('fs')
+const fs = require('fs');
 
 // Create Client instance
 const client = new Client({
@@ -21,8 +21,8 @@ const client = new Client({
     const job = await client.createJob();
     job.onStateChanged(newState => console.log(`job: ${newState}`));
     
-    //Log on output
-  //job.onOutput('Premier League Table', table=> console.log('output: Premier League Table', table))
+  //Log on output
+  //job.onOutput('Premier League Table', table=> console.log('output: Premier League Table', table));
     
     //Wait for completion
     await job.waitForCompletion();
@@ -34,4 +34,4 @@ const client = new Client({
     //Write response to file
     fs.writeFileSync('response.json', JSON.stringify(output));
 
-})()
+})();
