@@ -1,37 +1,18 @@
-// Enviroment Variables
-require('dotenv').config();
-const app_secret = process.env.secret
-//Log App Secret Key
-console.log(app_secret)
-//Automation Cloud Client
-const { Client } = require('@automationcloud/client');
-
 const fs = require('fs')
+var http = require('http');
 
-// Create Client instance
-const client = new Client({
-    serviceId: '26cc53af-fc37-486c-88ea-c6777b82fa9d',
-    auth: app_secret
+const data = fs.readFileSync('response.json', (err, data) => {
+  if (err) {
+    console.error(err)
+    return
+  }
 });
 
-// Create and follow job
+console.log(JSON.parse(data));
 
-(async function(){
-    //Creat job
-    const job = await client.createJob();
-    job.onStateChanged(newState => console.log(`job: ${newState}`));
-    
-    //Log on output
-  //job.onOutput('Premier League Table', table=> console.log('output: Premier League Table', table))
-    
-    //Wait for completion
-    await job.waitForCompletion();
-    
-    //Log on completion
-    const output = await job.getOutput('Premier League Table');
-    console.log('output: Premier League Table', output);
+//create a server object:
+http.createServer(function (req, res) {
+  res.write(data);
+  res.end();
+}).listen(3001); 
 
-    //Write response to file
-    fs.writeFileSync('response.json', JSON.stringify(output));
-
-})()
