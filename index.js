@@ -1,7 +1,7 @@
 //File System
 const fs = require('fs')
 
-//Initla data read
+//Initial data read
 data = fs.readFileSync('response.json', (err, data) => {
     if (err) {
       console.error(err)
