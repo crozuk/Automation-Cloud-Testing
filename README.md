@@ -7,4 +7,4 @@ The Automation Cloud app secret key required for authorisation should be stored 
 
 `secret=app_key`
 
-This utilises the ‘dotenv’ node package referenced in the package file ([package.json](https://github.com/crozuk/Automation-Cloud-Testing/blob/master/package.json)).
+This utilises the '[dotenv](https://www.npmjs.com/package/dotenv)' node package referenced in the package file ([package.json](https://github.com/crozuk/Automation-Cloud-Testing/blob/master/package.json)).
