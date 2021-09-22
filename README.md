@@ -9,7 +9,7 @@ Example JSON result -
 
 `{"position":"1","team":"Chelsea","points":"13","played":"5","won":"4","drawn":"1","lost":"0","goal_difference":"+11","next-match":"Manchester City Saturday 25 September 2021 CHE 12:30 MCI"}`
 
-A static index page ([index.html](https://github.com/crozuk/Automation-Cloud-Testing/blob/master/static/index.html)) is served with a link to the JSON file. All HTTP requests are handled by the '[express](https://www.npmjs.com/package/express) node package.
+A static index page ([index.html](https://github.com/crozuk/Automation-Cloud-Testing/blob/master/static/index.html)) is served with a link to the JSON file. All HTTP requests are handled by the '[express](https://www.npmjs.com/package/express)' node package.
 
 The automation service ([fetch.js](https://github.com/crozuk/Automation-Cloud-Testing/blob/master/fetch.js)) is triggered every 3 days and the JSON file ([response.json](https://github.com/crozuk/Automation-Cloud-Testing/blob/master/response.json)) is updated daily when the app is running.
 
