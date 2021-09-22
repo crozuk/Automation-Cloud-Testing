@@ -39,12 +39,22 @@ setInterval(function () {
 //Express server
 var express = require('express');
 var app = express();
-const port = 3001
+const port = 3001;
 
-app.get('/', (req, res) => {
+//Static file path
+app.use(express.static('static'));
+
+//Index page
+app.get('/', function(req, res){
+  res.sendFile('index.html');
+});
+
+//JSON file
+app.get('/response.json', (req, res) => {
   res.json(JSON.parse(data))
 })
 
+//Start server
 app.listen(port, () => {
-  console.log(`JSON response at http://localhost:${port}`)
+  console.log(`App running at http://localhost:${port}`)
 })
