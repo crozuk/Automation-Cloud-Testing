@@ -1,0 +1,24 @@
+/* Table Styles */
+tr th, tr td {
+    text-align: center ;
+}
+/* Hide First Column */
+thead tr th:last-of-type {
+    display: none;
+}
+tbody tr td:last-of-type {
+    display: none;
+}
+thead tr th:first-of-type {
+    display: none;
+}
+tbody tr td:first-of-type {
+    display: none;
+}
+/* Hide Last Column */
+thead tr th:last-of-type {
+    display: none;
+}
+tbody tr td:last-of-type {
+    display: none;
+}
